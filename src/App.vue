@@ -1,16 +1,37 @@
 <template>
   <div>
-    Table Component
-    <ATable title="Treats" :rows="rows" :columns="columns" />
+    <div class="section">
+      Table Component
+      <ATable title="Treats" :rows="rows" :columns="columns" />
+    </div>
+
+    <div class="section">
+      Dialog Component
+      <button @click="dialog = !dialog">Open Dialog</button>
+    </div>
+
+    <ADialog v-model="dialog">
+      <div style="display: flex; align-items: center">
+        <h3>Hello World</h3>
+        <button style="margin-left: 10px" @click="dialog = false">X</button>
+      </div>
+    </ADialog>
   </div>
 </template>
 
 <script>
 import ATable from './components/ATable.vue';
+import ADialog from './components/ADialog.vue';
 export default {
   name: 'App',
   components: {
     ATable,
+    ADialog,
+  },
+  data() {
+    return {
+      dialog: false,
+    };
   },
   computed: {
     columns() {
@@ -80,5 +101,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.section {
+  margin: 10px;
 }
 </style>
