@@ -11,7 +11,9 @@
     </div>
 
     <ADialog v-model="dialog">
-      <div style="display: flex; align-items: center">
+      <div
+        style="display: flex; align-items: center; background-color: #ff8080"
+      >
         <h3>Hello World</h3>
         <button style="margin-left: 10px" @click="dialog = false">X</button>
       </div>

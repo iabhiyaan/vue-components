@@ -1,7 +1,20 @@
 <template>
-  <div style="z-index: 999" v-if="computedModelValue">
-    <slot />
+  <div
+    style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 6000;
+      max-width: 100vw;
+      max-height: 100vh;
+    "
+    v-if="computedModelValue"
+  >
     <div @click="computedModelValue = false" class="backdrop"></div>
+
+    <div class="modal">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -27,11 +40,21 @@ export default {
 <style>
 .backdrop {
   position: fixed;
-  z-index: 1;
+  z-index: -1;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  outline: 0;
 }
 </style>
