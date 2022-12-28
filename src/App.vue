@@ -18,21 +18,37 @@
         <button style="margin-left: 10px" @click="dialog = false">X</button>
       </div>
     </ADialog>
+
+    <div class="section">
+      <h3>Tabs Component</h3>
+
+      {{ tab }}
+      <ATabs v-model="tab">
+        <ATab name="mails" label="Mails" />
+        <ATab name="alarms" label="Alarms" />
+      </ATabs>
+    </div>
   </div>
 </template>
 
 <script>
 import ATable from './components/ATable.vue';
 import ADialog from './components/ADialog.vue';
+import ATabs from './components/ATabs.vue';
+import ATab from './components/ATab.vue';
+
 export default {
   name: 'App',
   components: {
     ATable,
     ADialog,
+    ATabs,
+    ATab,
   },
   data() {
     return {
       dialog: false,
+      tab: 'mails',
     };
   },
   computed: {
