@@ -1,13 +1,12 @@
 <template>
   <div
     style="margin: 10px; cursor: pointer"
-    :class="{ active: aTabs === name }"
+    :class="{ active: aTabs.value === name }"
     @click="setTabs(name)"
   >
     <slot />
     {{ label }}
   </div>
-  {{ aTabs }}
 </template>
 
 <script>
@@ -18,6 +17,9 @@ export default {
     label: String,
   },
   inject: ['aTabs', 'setTabs'],
+  mounted() {
+    console.log(this.aTabs.value);
+  },
 };
 </script>
 

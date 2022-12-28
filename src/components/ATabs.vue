@@ -13,11 +13,8 @@ export default {
   },
   provide() {
     return {
-      aTabs: this.computedModelValue,
-      setTabs(val) {
-        this.computedModelValue = val;
-        console.log(this.computedModelValue);
-      },
+      aTabs: computed(() => this.computedModelValue),
+      setTabs: this.setTabs,
     };
   },
   computed: {
@@ -28,6 +25,11 @@ export default {
       set(val) {
         this.$emit('update:modelValue', val);
       },
+    },
+  },
+  methods: {
+    setTabs(val) {
+      this.computedModelValue = val;
     },
   },
 };
