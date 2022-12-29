@@ -28,6 +28,35 @@
         <ATab name="alarms" label="Alarms" />
       </ATabs>
     </div>
+
+    <div class="section">
+      <h3>Tab With Tab Panels Component</h3>
+
+      <ATabs v-model="tab">
+        <ATab name="mails" label="Mails" />
+        <ATab name="alarms" label="Alarms" />
+      </ATabs>
+
+      <ATabPanels v-model="tab">
+        <ATabPanel name="mails">
+          <div>
+            Mails: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi, vitae. Cumque dicta maiores rem architecto aperiam,
+            explicabo iure minus sint optio, laborum adipisci excepturi
+            inventore impedit voluptatum quaerat unde harum!
+          </div>
+        </ATabPanel>
+
+        <ATabPanel name="alarms">
+          <div>
+            Alarms: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eligendi, vitae. Cumque dicta maiores rem architecto aperiam,
+            explicabo iure minus sint optio, laborum adipisci excepturi
+            inventore impedit voluptatum quaerat unde harum!
+          </div>
+        </ATabPanel>
+      </ATabPanels>
+    </div>
   </div>
 </template>
 
@@ -36,6 +65,8 @@ import ATable from './components/ATable.vue';
 import ADialog from './components/ADialog.vue';
 import ATabs from './components/ATabs.vue';
 import ATab from './components/ATab.vue';
+import ATabPanels from './components/ATabPanels.vue';
+import ATabPanel from './components/ATabPanel.vue';
 
 export default {
   name: 'App',
@@ -44,6 +75,8 @@ export default {
     ADialog,
     ATabs,
     ATab,
+    ATabPanels,
+    ATabPanel,
   },
   data() {
     return {
