@@ -57,6 +57,54 @@
         </ATabPanel>
       </ATabPanels>
     </div>
+
+    <div class="section">
+      <h3>Accordion Component</h3>
+
+      <Accordion label="Header">
+        <div style="margin-left: 10px">
+          <div style="margin-left: 10px">
+            Body: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Sapiente libero at illum porro quis molestiae eveniet natus facere
+            aliquid, cum ab mollitia quas doloribus soluta officiis ea cumque
+            culpa modi.
+          </div>
+        </div>
+      </Accordion>
+
+      <Accordion label="Footer">
+        <div>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente
+          libero at illum porro quis molestiae eveniet natus facere aliquid, cum
+          ab mollitia quas doloribus soluta officiis ea cumque culpa modi.
+        </div>
+      </Accordion>
+    </div>
+
+    <div class="section">
+      <h3>Accordion With Nested Component</h3>
+
+      <Accordion label="Header">
+        <div style="margin-left: 10px">
+          <Accordion label="Body">
+            <div style="margin-left: 10px">
+              Body: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Sapiente libero at illum porro quis molestiae eveniet natus facere
+              aliquid, cum ab mollitia quas doloribus soluta officiis ea cumque
+              culpa modi.
+            </div>
+          </Accordion>
+        </div>
+      </Accordion>
+
+      <Accordion label="Footer">
+        <div>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente
+          libero at illum porro quis molestiae eveniet natus facere aliquid, cum
+          ab mollitia quas doloribus soluta officiis ea cumque culpa modi.
+        </div>
+      </Accordion>
+    </div>
   </div>
 </template>
 
@@ -68,6 +116,8 @@ import ATab from './components/ATab.vue';
 import ATabPanels from './components/ATabPanels.vue';
 import ATabPanel from './components/ATabPanel.vue';
 
+import Accordion from './components/Accordion.vue';
+
 export default {
   name: 'App',
   components: {
@@ -77,6 +127,7 @@ export default {
     ATab,
     ATabPanels,
     ATabPanel,
+    Accordion,
   },
   data() {
     return {
