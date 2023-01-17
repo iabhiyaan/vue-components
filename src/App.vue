@@ -105,6 +105,32 @@
         </div>
       </Accordion>
     </div>
+
+    <div class="section">
+      <h3>Simple Drop down button</h3>
+      <ADropDownButton label="Select Fonts">
+        <template #content>
+          <div v-for="n in 10" :key="n">{{ n }}</div>
+        </template>
+      </ADropDownButton>
+    </div>
+
+    <div class="section">
+      <h3>Drop down with custom handler</h3>
+      <ADropDownButton label="Select Fonts">
+        <template #default="{ isExpanded, handleClick }">
+          <button
+            @click="handleClick"
+            style="border: none; background: #ccc; color: red; padding: 10px"
+          >
+            Select Data
+          </button>
+        </template>
+        <template #content>
+          <div v-for="n in 10" :key="n">{{ n }}</div>
+        </template>
+      </ADropDownButton>
+    </div>
   </div>
 </template>
 
@@ -117,6 +143,7 @@ import ATabPanels from './components/ATabPanels.vue';
 import ATabPanel from './components/ATabPanel.vue';
 
 import Accordion from './components/Accordion.vue';
+import ADropDownButton from './components/ADropDownButton.vue';
 
 export default {
   name: 'App',
@@ -128,6 +155,7 @@ export default {
     ATabPanels,
     ATabPanel,
     Accordion,
+    ADropDownButton,
   },
   data() {
     return {
