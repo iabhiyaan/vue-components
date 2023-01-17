@@ -1,7 +1,7 @@
 <template>
   <div
     style="margin: 10px; cursor: pointer"
-    :class="{ active: tabValue === name }"
+    :class="{ active: aTabs.value === name }"
     @click="setTabs(name)"
   >
     <slot />
@@ -17,11 +17,6 @@ export default {
     label: String,
   },
   inject: ['aTabs', 'setTabs'],
-  computed: {
-    tabValue() {
-      return this.aTabs.value;
-    },
-  },
 };
 </script>
 
