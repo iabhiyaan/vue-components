@@ -22,7 +22,7 @@
     <div class="section">
       <h3>Tabs Component</h3>
 
-      {{ tab }}
+      Tab Value: {{ tab }}
       <ATabs v-model="tab">
         <ATab name="mails" label="Mails" />
         <ATab name="alarms" label="Alarms" />
