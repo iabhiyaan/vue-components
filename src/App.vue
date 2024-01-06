@@ -4,6 +4,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import Sidebar from "./components/Sidebar.vue";
 import useSidebar from "./composables/useSidebar";
 import {computed, ref, watchEffect} from "vue";
+import VSC from "./components/VSC.vue";
 
 const sidebars = [
   {
@@ -52,6 +53,12 @@ watchEffect(() => {
       <img alt="Vue logo" class="logo vue" src="./assets/vue.svg"/>
     </a>
   </div>
+  <Suspense>
+    <VSC />
+    <template #fallback>
+      Loading...
+    </template>
+  </Suspense>
   <HelloWorld msg="Vite + Vue"/>
   <pre>{{ scopedSlotSideBars }}</pre>
   <Sidebar ref="sidebarRef" :sidebars="sidebars">
